@@ -1,10 +1,9 @@
-### Your next great lesson is under a click.
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
-## Techs and libs used
+## Techs e libs usadas
 
 - React JS.
 - Vite.
@@ -14,8 +13,11 @@
 - Tailwind CSS.
 - Phosphor Icons.
 <br/>
+## Layout
+Figma, acesse [aqui](https://www.figma.com/file/UAnSIo2MD2TRxd4hMQcpjA/Plataforma-de-evento---Ignite-Lab-(Community)?node-id=0%3A1)
+<br/>
 
-## Setup and run
+## Configurar e executar
 
 Primeiro clone este repositório e instale todas as dependências usando o comando `yarn` na pasta do projeto em um terminal de sua escolha.
 <br/>
