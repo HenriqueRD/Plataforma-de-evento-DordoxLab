@@ -13,8 +13,9 @@
 - Tailwind CSS.
 - Phosphor Icons.
 <br/>
-## Layout.
-Figma, acesse [aqui](https://www.figma.com/file/UAnSIo2MD2TRxd4hMQcpjA/Plataforma-de-evento---Ignite-Lab-(Community)?node-id=0%3A1) .<br/>
+## Layout
+Figma, acesse (https://www.figma.com/file/UAnSIo2MD2TRxd4hMQcpjA/Plataforma-de-evento---Ignite-Lab-(Community)?node-id=0%3A1)
+<br/>
 
 ## Configurar e executar
 
