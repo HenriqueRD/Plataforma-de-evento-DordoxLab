@@ -1,6 +1,32 @@
+import { gql, useMutation } from "@apollo/client";
+import { useState, FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 import { Header } from "../components/Header";
 
+const POST_SUBSCRIBER = gql`
+    mutation ($name:String!, $email:String!) {
+    createSubscriber(data: {name: $name, email: $email}) {
+        id
+    }}
+`
 export function Home() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const navigation = useNavigate();
+    const [createSubscriber, { loading }] = useMutation(POST_SUBSCRIBER);
+    
+    async function handleSubscriber(event:FormEvent) {
+        event.preventDefault();
+        if(name === '' || email === '') {
+            alert('Preencha todos os campos!')
+            return;
+        }
+
+        await (await createSubscriber({ variables: { name, email}}))
+
+        navigation('/evento')
+    }
+
     return (
         <>
             <Header />
@@ -12,10 +38,10 @@ export function Home() {
                     </div>
                     <div className="flex max-w-[390px] flex-col border-2 rounded bg-gray-700 border-gray-500 p-8">
                         <h2 className="text-2xl font-medium block">Inscreva-se gratuitamente</h2>
-                        <form action="" className="flex flex-col gap-4 mt-6">
-                            <input type="text" placeholder="Seu nome completo" className="rounded p-4 bg-gray-900" />
-                            <input type="email" placeholder="Digite seu email" className="rounded p-4 bg-gray-900" />
-                            <button type="submit" className="p-4 mt-4 bg-green-500 rounded hover:bg-green-700 transition-colors">GARANTIR MINHA VAGA</button>
+                        <form onSubmit={handleSubscriber} className="flex flex-col gap-4 mt-6">
+                            <input type="text" placeholder="Seu nome completo" onChange={event => setName(event.target.value)} className="rounded p-4 bg-gray-900" />
+                            <input type="text" placeholder="Digite seu email" onChange={event => setEmail(event.target.value)} className="rounded p-4 bg-gray-900" />
+                            <button type="submit" disabled={loading} className="p-4 mt-4 bg-green-500 rounded disabled:opacity-50 hover:bg-green-700 transition-colors">GARANTIR MINHA VAGA</button>
                         </form>
                     </div>
                 </div>
