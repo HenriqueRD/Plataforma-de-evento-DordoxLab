@@ -2,6 +2,7 @@ import { gql, useMutation } from "@apollo/client";
 import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../components/Header";
+import image from '../../src/assets/image.png';
 
 const POST_SUBSCRIBER = gql`
     mutation ($name:String!, $email:String!) {
@@ -45,7 +46,7 @@ export function Home() {
                         </form>
                     </div>
                 </div>
-                <img src="/src/assets/image.png" className="" alt="" /> 
+                <img src={image} className="" alt="" /> 
             </div>
         </>
     )
